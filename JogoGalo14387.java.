@@ -8,14 +8,14 @@ public class JogoDoGalo {
       Scanner input = new Scanner(System.in);
       
       while (!gameEnded) {
-         System.out.println("Jogador " + currentPlayer + ", È sua vez. Insira a linha (1-3) e coluna (1-3) separados por espaÁo:");
+         System.out.println("Jogador " + currentPlayer + ", √© sua vez. Insira a linha (1-3) e coluna (1-3) separados por espa√ßo:");
          int row = input.nextInt() - 1;
          int col = input.nextInt() - 1;
          
          if (board[row][col] == ' ') {
             board[row][col] = currentPlayer;
             if (currentPlayerWins(board, currentPlayer)) {
-               System.out.println("ParabÈns, jogador " + currentPlayer + ", vocÍ ganhou!");
+               System.out.println("Parab√©ns, jogador " + currentPlayer + ", voc√™ ganhou!");
                gameEnded = true;
             } else if (isBoardFull(board)) {
                System.out.println("Empate!");
@@ -24,7 +24,7 @@ public class JogoDoGalo {
                currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
             }
          } else {
-            System.out.println("Essa posiÁ„o j· est· ocupada. Tente novamente.");
+            System.out.println("Essa posi√ß√£o j√° est√° ocupada. Tente novamente.");
          }
       }
       input.close();
@@ -47,7 +47,7 @@ public class JogoDoGalo {
       return false;
    }
    
-   // Verifica se o tabuleiro est· completamente preenchido
+   // Verifica se o tabuleiro est√° completamente preenchido
    public static boolean isBoardFull(char[][] board) {
       for (int row = 0; row < 3; row++) {
          for (int col = 0; col < 3; col++) {
